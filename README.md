@@ -1,12 +1,21 @@
-# udaci-meals
+# Quiz - Angular Directives
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.16.0.
+Starter code for [Udacity](https://www.udacity.com)'s [Front End Frameworks course](https://www.udacity.com/course/front-end-frameworks--ud894).
 
-## Build & development
+## Required Software
 
-Run `grunt` for building and `grunt serve` for preview.
+* [Git](https://git-scm.com/)
+* [Node/NPM](https://nodejs.org/en/)
+* [Bower](http://bower.io/)
+* [Grunt](http://gruntjs.com/)
 
-## Testing
+## Getting Set Up
 
-Running `grunt test` will run the unit tests with karma.
+1. Clone this repo
+2. `cd` into the newly cloned project
+3. Install NPM dependencies via `npm install`
+4. Install Bower dependencies via `bower install`
+
+## View the app
+
+* In the terminal, run `grunt serve`. If you run into issues with this command, make sure that Grunt's command line interface is installed on your machine (`npm install -g grunt-cli`), then try again.

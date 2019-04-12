@@ -35,6 +35,7 @@ body {
   padding-top: 19px;
   color: #777;
   border-top: 1px solid #e5e5e5;
+  text-align: center;
 }
 
 .container-narrow > hr {
@@ -80,4 +81,40 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+}
+
+#colorList,
+#colorList ul {
+  list-style: none;
+}
+
+#colorList .low-stock {
+  overflow: hidden;
+}
+
+#colorList .low-stock::before {
+  background: white;
+  box-shadow: 1px 1px 5px rgba(146, 142, 142, 0.5);
+  content: 'low stock!';
+  text-align: center;
+  transform: rotate(45deg);
+  position: absolute;
+  height: 1.5em;
+  width: 10em;
+  top: 2.3em;
+  right: -2.5em;
+}
+
+.coming-soon {
+  color: rgb(184, 161, 7);
+  font-style: italic;
+  text-shadow: 1px 1px white;
+}
+
+.footer:hover .glyphicon-heart::before {
+  color: red;
+}
+
+.glyphicon-heart::before {
+  transition: 0.25s color;
 }
