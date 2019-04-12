@@ -1,31 +1,18 @@
 <h2 id="storeHeading">{{lego.name}}</h2>
 <p id="brickColors">Brick colors: {{lego.brickColors.length}}</p>
-<!--<ul id="colorList" >
-    <li ng-attr-id="{{ 'color-' + lego.bricks }}" ng-repeat="item in lego.bricks">{{item.1x1.price}}</li>
-</ul>-->
 
-
-<ul id="colorList" ng-repeat="(key,value) in lego.bricks">
-    <li ng-attr-id="{{ 'color-' + key }}">{{key}}</li>
+<ul class="row" id="colorList" ng-repeat="(color,details) in lego.bricks">
+    <li ng-attr-id="{{ 'color-' + color }}">{{color}}</li>
     <div ng-repeat="item in lego.bricks">
-        <div ng-repeat="(key,value) in item">
-            <ul>
-                <li ng-class="{{'brick-' + key}}">{{key}}</li>
-                <ul>
-                    <li>{{value.price}}</li>
-                    <li ng-class="{{value.quantity < 10 ? 'low-stock' : 'coming-soon' }}">{{value.quantity}}</li>
-                    <!--<li ng-class="{{value.quantity < 10 ? 'low-stock' : value.quantity < 5 ? 'coming-soon'}}">{{value.quantity}}</li>-->
-                </ul>
+        <div ng-repeat="(size,info) in item" >
+            <ul class="col-sm-3 well" ng-class="{'low-stock': info.quantity < 10}">
+                <li ng-class="{{'brick-' + size}}">Size: {{size}}</li>
+                <li>Price: {{info.price}}</li>
+                <li>Quantity: {{info.quantity}}</li>
+                <p ng-if="info.quantity < 5" class="coming-soon">More on the way!</p>
+                <button class="buyButton" ng-click="lego.buy(info, size)">Buy</button>
+                <button class="returnButton">Return</button>
             </ul>
         </div>
     </div>
 </ul>
-
-<!--<div ng-repeat="item in lego.bricks">
-    <div ng-repeat="(key,value) in item">
-      <strong ng-class="{{'brick-' + key}}">{{key}}</strong>
-      <p>{{value.price}}</p>
-      <p>{{value.quantity}}</p>
-   </div>
-   <br>
-</div>-->
